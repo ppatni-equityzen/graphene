@@ -19,7 +19,7 @@ class Decimal(Scalar):
         assert isinstance(
             dec, _Decimal
         ), f'Received not compatible Decimal "{repr(dec)}"'
-        return str(dec)
+        return dec
 
     @staticmethod
     def parse_literal(node):
