@@ -21,10 +21,10 @@ class Decimal(Scalar):
         ), f'Received not compatible Decimal "{repr(dec)}"'
         return str(dec)
 
-    @classmethod
-    def parse_literal(cls, node):
+    @staticmethod
+    def parse_literal(node):
         if isinstance(node, (StringValueNode, IntValueNode)):
-            return cls.parse_value(node.value)
+            return _Decimal(node.value)
 
     @staticmethod
     def parse_value(value):
